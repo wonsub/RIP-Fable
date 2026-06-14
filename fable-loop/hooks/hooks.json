@@ -1,26 +1,29 @@
 {
-  "SessionStart": [
-    {
-      "matcher": "",
-      "hooks": [
-        {
-          "type": "command",
-          "command": "cat ${CLAUDE_PLUGIN_ROOT}/memory/handoff.md 2>/dev/null || true",
-          "timeout": 10
-        }
-      ]
-    }
-  ],
-  "SubagentStop": [
-    {
-      "matcher": "",
-      "hooks": [
-        {
-          "type": "prompt",
-          "prompt": "A subagent just finished. If it resolved a failure during the fable loop, distill the resolution into one or two lines ('Symptom X caused by Y, fixed by Z') and append it to memory/lessons.md. Then update memory/handoff.md so the lane status table and 'Next action' reflect the new state. Keep handoff.md under ~30 lines; move any detail to its linked file.",
-          "timeout": 30
-        }
-      ]
-    }
-  ]
+  "description": "Memory handoff and lesson distillation hooks for fable-loop.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cat ${CLAUDE_PLUGIN_ROOT}/memory/handoff.md 2>/dev/null || true",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "A subagent just finished. If it resolved a failure during the fable loop, distill the resolution into one or two lines ('Symptom X caused by Y, fixed by Z') and append it to memory/lessons.md. Then update memory/handoff.md so the lane status table and 'Next action' reflect the new state. Keep handoff.md under ~30 lines; move any detail to its linked file.",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  }
 }

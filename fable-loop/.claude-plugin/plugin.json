@@ -5,5 +5,8 @@
   "author": {
     "name": "Wonsub"
   },
+  "homepage": "https://github.com/wonsub/RIP-Fable",
+  "repository": "https://github.com/wonsub/RIP-Fable",
+  "license": "MIT",
   "keywords": ["agent", "loop", "self-correction", "verifier", "memory", "architect"]
 }

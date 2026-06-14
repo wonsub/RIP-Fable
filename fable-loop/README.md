@@ -5,6 +5,11 @@ turns a non-trivial task into a disciplined cycle: **plan → build → verify �
 distill**, with strict role separation and external memory. Model-agnostic — runs
 on whatever Claude model is active.
 
+> **Install:** in an interactive `claude` session, run
+> `/plugin marketplace add wonsub/RIP-Fable` then
+> `/plugin install fable-loop@rip-fable`.
+> Full instructions (English / 한국어) are in the [repository README](../README.md).
+
 ## What it does
 
 Four patterns, always applied together:
