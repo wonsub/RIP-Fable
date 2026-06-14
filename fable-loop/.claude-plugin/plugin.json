@@ -1,0 +1,9 @@
+{
+  "name": "fable-loop",
+  "version": "0.1.0",
+  "description": "A general-purpose autonomous agent loop modeled on Mythos-class loop design: architect/builder role separation, fail-investigate-verify-distill iteration, verifier sub-agent gating, and short-map external memory.",
+  "author": {
+    "name": "Wonsub"
+  },
+  "keywords": ["agent", "loop", "self-correction", "verifier", "memory", "architect"]
+}
