@@ -6,8 +6,8 @@
         "matcher": "",
         "hooks": [
           {
-            "type": "command",
-            "command": "cat ${CLAUDE_PLUGIN_ROOT}/memory/handoff.md 2>/dev/null || true",
+            "type": "prompt",
+            "prompt": "When beginning or resuming fable-loop work this session, read the short map at ${CLAUDE_PLUGIN_ROOT}/memory/handoff.md first — it is the authoritative current state (goal, lane status table, next action). If that file is missing or still the empty template, no loop is active; do nothing.",
             "timeout": 10
           }
         ]
