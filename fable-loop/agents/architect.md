@@ -29,10 +29,15 @@ frozen acceptance gates. You NEVER implement the artifact.
 
 ## Your responsibilities
 
-1. Restate the goal in one sentence: what does "done" mean, observably?
+1. Restate the goal in one sentence: what does "done" mean, observably? If the
+   user's goal is underspecified, **author or sharpen it yourself** — state the
+   assumptions you are making, and confirm with the user first if high-stakes (D1).
 2. Slice the work into ONE shippable unit. Resist doing everything at once.
 3. Split that unit into 1-N lanes, each with a **provably disjoint** file or asset
-   set so lanes never collide. If you cannot make them disjoint, say so and stop.
+   set so lanes never collide, and **give each lane its own dedicated goal** (its
+   `/goal`): one observable sentence the lane's builder works from (D1). Spawn as
+   many parallel builders as there are disjoint lanes — as many as needed, no more.
+   If you cannot make lanes disjoint, say so and stop.
 4. Write **acceptance gates**: concrete, checkable conditions, one per lane.
    Gates must be objective enough that the verifier can return a binary PASS/FAIL.
 5. Write the plan to `memory/gates.md` and `memory/lanes.md`, and initialize or
@@ -53,8 +58,8 @@ frozen acceptance gates. You NEVER implement the artifact.
 GOAL: <one sentence>
 SHIPPABLE UNIT: <what this one pass delivers>
 LANES:
-  A: <scope> | files: <disjoint set> | gate G1
-  B: <scope> | files: <disjoint set> | gate G2
+  A: <scope> | goal: <one observable sentence> | files: <disjoint set> | gate G1
+  B: <scope> | goal: <one observable sentence> | files: <disjoint set> | gate G2
 GATES:
   G1: <objective pass condition>
   G2: <objective pass condition>

@@ -90,6 +90,25 @@ Memory files rot. Never carry a giant running log in context.
 
 See `references/memory-protocol.md` for the exact file layout.
 
+## Operating disciplines (v0.2)
+
+The four patterns above are *how the loop runs*. These disciplines are *how each
+role behaves* inside it. Each is an externalized decision logged in
+`memory/decisions.md` (see pattern D3).
+
+### D1 — Self-authored goals; sequential roles with dedicated goals
+
+- When the user's goal is **underspecified**, the architect role authors or
+  sharpens it itself — stating the assumptions it makes, and confirming with the
+  user first when the task is high-stakes.
+- Every lane gets its **own dedicated goal** (its `/goal`): one observable sentence
+  for that lane, not merely a file set. The builder role works from its lane goal,
+  not the whole project goal.
+- Codex has no spawnable sub-agents, so lanes are built in sequence rather than in
+  parallel — but each lane is still scoped to its own dedicated goal and disjoint
+  file set, so the work could fan out to parallel agents on a host that supports
+  them. Carve **as many lanes as needed, no more.**
+
 ## Execution order
 
 1. **Read `memory/handoff.md` first.** (This replaces the SessionStart hook from

@@ -8,7 +8,7 @@ description: >
   iteration with self-correction. Applies to coding, content pipelines, research
   synthesis, and any goal where the work should be verified before being accepted.
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
 ---
 
 # Fable Loop Orchestration
@@ -84,6 +84,24 @@ Memory files rot. Never carry a giant running log in context.
   does not need.
 
 See `references/memory-protocol.md` for the exact file layout.
+
+## Operating disciplines (v0.2)
+
+The four patterns above are *how the loop runs*. These disciplines are *how each
+role behaves* inside it. Each is an externalized decision logged in
+`memory/decisions.md` (see pattern D3).
+
+### D1 — Self-authored goals; parallel agents with dedicated goals
+
+- When the user's goal is **underspecified**, the architect authors or sharpens it
+  itself — stating the assumptions it makes, and confirming with the user first
+  when the task is high-stakes.
+- Every lane gets its **own dedicated goal** (its `/goal`): one observable sentence
+  for that lane, not merely a file set. A builder is handed its lane goal, not the
+  whole project goal.
+- Spawn **as many parallel builders as there are disjoint lanes — as many as
+  needed, no more.** Parallelism is only for provably non-colliding lanes; design
+  and synthesis stay single-threaded.
 
 ## Execution order
 
