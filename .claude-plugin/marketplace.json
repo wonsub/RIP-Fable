@@ -5,13 +5,13 @@
   },
   "metadata": {
     "description": "Marketplace for the fable-loop autonomous agent loop plugin.",
-    "version": "0.1.0"
+    "version": "0.2.0"
   },
   "plugins": [
     {
       "name": "fable-loop",
-      "description": "A general-purpose autonomous agent loop: architect/builder role separation, fail-investigate-verify-distill iteration, verifier sub-agent gating, and short-map external memory.",
-      "version": "0.1.0",
+      "description": "A general-purpose autonomous agent loop: architect/builder role separation, fail-investigate-verify-distill iteration, verifier sub-agent gating, and short-map external memory. v0.2 adds contractual distrust-by-default, externalized decision logs, boundary-first scoping, reversibility, and a broadened definition of done.",
+      "version": "0.2.0",
       "author": {
         "name": "Wonsub"
       },

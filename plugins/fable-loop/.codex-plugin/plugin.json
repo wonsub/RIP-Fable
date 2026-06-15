@@ -1,14 +1,14 @@
 {
   "name": "fable-loop",
-  "version": "0.1.0",
-  "description": "A general-purpose autonomous agent loop: architect/builder role separation, fail-investigate-verify-distill iteration, independent verification, and short-map external memory.",
+  "version": "0.2.0",
+  "description": "A general-purpose autonomous agent loop: architect/builder role separation, fail-investigate-verify-distill iteration, independent verification, and short-map external memory. v0.2 adds contractual distrust-by-default, externalized decision logs, boundary-first scoping, reversibility, and a broadened definition of done.",
   "author": {
     "name": "Wonsub"
   },
   "homepage": "https://github.com/wonsub/RIP-Fable",
   "repository": "https://github.com/wonsub/RIP-Fable",
   "license": "MIT",
-  "keywords": ["agent", "loop", "self-correction", "verifier", "memory", "architect"],
+  "keywords": ["agent", "loop", "self-correction", "verifier", "memory", "architect", "contracts", "decision-log", "reversibility"],
   "skills": "./skills/",
   "interface": {
     "displayName": "Fable Loop",
