@@ -4,6 +4,11 @@ A general-purpose autonomous agent loop for [Claude Code](https://claude.com/cla
 
 > *한국어 안내는 아래 [한국어](#한국어) 섹션을 참고하세요.*
 
+> **Two editions.** This repo ships the loop for **both** Claude Code (root
+> `fable-loop/`, below) and the **Codex CLI** (`plugins/fable-loop/`). For Codex,
+> run `codex plugin marketplace add <repo>` and enable `fable-loop@rip-fable` —
+> see [plugins/fable-loop/README.md](plugins/fable-loop/README.md).
+
 ---
 
 ## English

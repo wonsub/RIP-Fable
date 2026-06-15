@@ -1,0 +1,20 @@
+{
+  "name": "rip-fable",
+  "interface": {
+    "displayName": "Rip Fable"
+  },
+  "plugins": [
+    {
+      "name": "fable-loop",
+      "source": {
+        "source": "local",
+        "path": "./plugins/fable-loop"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

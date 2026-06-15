@@ -1,0 +1,27 @@
+{
+  "name": "fable-loop",
+  "version": "0.1.0",
+  "description": "A general-purpose autonomous agent loop: architect/builder role separation, fail-investigate-verify-distill iteration, independent verification, and short-map external memory.",
+  "author": {
+    "name": "Wonsub"
+  },
+  "homepage": "https://github.com/wonsub/RIP-Fable",
+  "repository": "https://github.com/wonsub/RIP-Fable",
+  "license": "MIT",
+  "keywords": ["agent", "loop", "self-correction", "verifier", "memory", "architect"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Fable Loop",
+    "shortDescription": "Run non-trivial tasks as a plan-build-verify-distill loop.",
+    "longDescription": "Fable Loop turns a non-trivial task into a disciplined cycle: plan, build, verify, distill. It keeps the architect role (spec + frozen gates) separate from the builder role (implementation), verifies the real artifact against frozen gates instead of trusting self-critique, and carries state in a short external-memory map instead of a context log that rots. Model-agnostic.",
+    "developerName": "Wonsub",
+    "category": "Productivity",
+    "capabilities": ["Write"],
+    "brandColor": "#6E56CF",
+    "defaultPrompt": [
+      "Run this as a fable loop.",
+      "Architect then build the X feature.",
+      "Use the self-correcting agent loop on this."
+    ]
+  }
+}
