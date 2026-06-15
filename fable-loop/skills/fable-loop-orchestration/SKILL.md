@@ -103,6 +103,13 @@ role behaves* inside it. Each is an externalized decision logged in
   needed, no more.** Parallelism is only for provably non-colliding lanes; design
   and synthesis stay single-threaded.
 
+### D4 — Declare the boundary before solving
+
+Before any build, the architect writes down what it will **not** touch — an
+explicit out-of-scope / "do-not-touch" list — to narrow the change radius up
+front. Open scope by **convergence, not divergence**: name the files, modules, and
+behaviors that stay frozen, so the build can only grow inward toward the goal.
+
 ## Execution order
 
 1. **Read** `memory/handoff.md` if it exists (resume) — otherwise initialize it.

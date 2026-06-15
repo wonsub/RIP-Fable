@@ -109,6 +109,13 @@ role behaves* inside it. Each is an externalized decision logged in
   file set, so the work could fan out to parallel agents on a host that supports
   them. Carve **as many lanes as needed, no more.**
 
+### D4 — Declare the boundary before solving
+
+Before any build, the architect role writes down what it will **not** touch — an
+explicit out-of-scope / "do-not-touch" list — to narrow the change radius up
+front. Open scope by **convergence, not divergence**: name the files, modules, and
+behaviors that stay frozen, so the build can only grow inward toward the goal.
+
 ## Execution order
 
 1. **Read `memory/handoff.md` first.** (This replaces the SessionStart hook from

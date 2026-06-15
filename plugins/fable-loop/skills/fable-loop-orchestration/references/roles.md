@@ -22,7 +22,10 @@ the artifact.
    make them disjoint, say so and stop.
 4. Write **acceptance gates** — concrete, checkable conditions — one per lane.
    Gates must be objective enough that the verify step can return a binary PASS/FAIL.
-5. Write the plan to `memory/gates.md` and `memory/lanes.md`, and initialize or
+5. **Declare the boundary first (D4):** write an explicit "DO NOT TOUCH" list —
+   files, modules, and behaviors that stay frozen — to narrow the change radius
+   before building. Open scope by convergence, not divergence.
+6. Write the plan to `memory/gates.md` and `memory/lanes.md`, and initialize or
    update `memory/handoff.md` as a short map.
 
 Hard rules: output a spec, never an implementation. Gates are frozen once written.
@@ -34,6 +37,7 @@ Output format:
 ```
 GOAL: <one sentence>
 SHIPPABLE UNIT: <what this one pass delivers>
+DO NOT TOUCH: <files / modules / behaviors that stay frozen — declared before building>
 LANES:
   A — <scope> | goal: <one observable sentence> | files: <disjoint set> | gate G1
   B — <scope> | goal: <one observable sentence> | files: <disjoint set> | gate G2
