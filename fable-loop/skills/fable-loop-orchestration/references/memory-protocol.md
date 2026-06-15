@@ -10,7 +10,8 @@ memory/
 ├── handoff.md      # THE short map. Always current. Read first, written last.
 ├── gates.md        # Frozen acceptance gates, written by architect, never edited mid-run.
 ├── lanes.md        # Lane specs + disjoint file/asset sets.
-└── lessons.md      # Distilled one-line lessons, append-only.
+├── lessons.md      # Distilled one-line lessons, append-only.
+└── decisions.md    # Externalized decisions: IDs + reason/cost/escape-hatch.
 ```
 
 ## handoff.md — the short map
@@ -51,6 +52,9 @@ This is the only file always kept in working context. Keep it under ~30 lines.
    build artifacts live on disk, referenced by path, not pasted into the prompt.
 6. **lessons.md is append-only** and is the cross-session memory. Future runs read
    it to avoid repeating resolved mistakes.
+7. **decisions.md is the externalized decision log (D3)** — every non-obvious
+   decision gets an ID and a mirrored reason/cost/escape-hatch comment at the
+   decision site; see it alongside lessons.md as cross-run memory.
 
 ## Why not just use the big context window
 
