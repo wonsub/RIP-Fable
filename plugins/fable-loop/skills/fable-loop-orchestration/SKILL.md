@@ -125,6 +125,13 @@ commit message carrying reason · cost · escape-hatch — and record the escape
 in `memory/decisions.md`. If you cannot name how to undo a change, it is too big;
 slice it.
 
+### D6 — "Done" means more than "it runs"
+
+A unit is done only when all four hold: it **works** (behavior), it is **tested**
+(including the four-value boundary tests from D2 wherever a trust boundary is
+crossed), its **docs are current**, and it has passed **independent verification**.
+Code that merely runs is not done — the verifier checks all four, not just the gate.
+
 ## Execution order
 
 1. **Read `memory/handoff.md` first.** (This replaces the SessionStart hook from

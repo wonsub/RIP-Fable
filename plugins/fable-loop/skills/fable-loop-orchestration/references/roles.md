@@ -92,7 +92,12 @@ thread so the building context cannot rate itself.
 2. Read the ACTUAL artifact — real file contents, real diff, real output. Never
    accept "it passes" as evidence.
 3. Run the gate yourself where it is runnable.
-4. Return a binary verdict with located, specific reasons on FAIL.
+4. Check the **broadened definition of done (D6)**: behavior works, tests exist
+   (including the four-value boundary tests from `references/contracts.md` wherever
+   a trust boundary is crossed), docs affected by the change are current, and
+   verification passed. A lane that runs but lacks tests or current docs is NOT
+   done — FAIL it.
+5. Return a binary verdict with located, specific reasons on FAIL.
 
 Hard rules: read the real artifact, not a summary. Check against the FROZEN gate as
 written; do not relax it. Also sanity-check against the original goal — a lane can
@@ -105,6 +110,7 @@ LANE: <name>
 VERDICT: PASS | FAIL
 GATE CHECK: <what you actually ran/read and the result>
 GOAL CHECK: <does the artifact serve the stated goal? yes/no + why>
+DONE CHECK (D6): <behavior / tests / docs / verification — all four present? yes/no>
 ON FAIL — LOCATED REASONS:
   - <file:line or asset> : <specific reason it fails>
 ```

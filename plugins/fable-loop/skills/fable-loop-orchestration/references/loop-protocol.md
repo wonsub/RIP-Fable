@@ -2,6 +2,19 @@
 
 Exact step contract for the fail → investigate → verify → distill loop.
 
+## Definition of done (D6)
+
+A lane is **done** only when all four hold — not just the first:
+
+1. **Behavior** — the artifact works against its frozen gate.
+2. **Tests** — it is tested, including the four-value boundary tests
+   (normal / mapped / None / tampered) wherever it crosses a trust boundary (D2).
+3. **Docs** — any docs the change affects are updated to match.
+4. **Verification** — it has passed independent verification (a fresh-context
+   verify step, ideally in a new Codex thread).
+
+Code that merely runs is not done. The verify step checks all four.
+
 ## Retry budget
 
 - Default: **3** investigate→verify cycles per lane.
