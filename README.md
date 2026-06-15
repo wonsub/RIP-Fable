@@ -22,6 +22,15 @@ Four patterns, always applied together:
 3. **Verifier sub-agent gating** — a separate agent reads the real artifact against frozen gates, replacing unreliable self-critique.
 4. **Short-map external memory** — a small always-current handoff map plus linked detail files, instead of a giant context log that rots.
 
+**New in v0.2 — operating disciplines (D1–D6):** on top of the four patterns, six externalized, ID'd disciplines (logged in `memory/decisions.md`):
+
+- **D1 — Self-authored goals.** The architect authors/refines an underspecified goal and gives every lane its own dedicated `/goal`; spawn as many parallel builders as there are disjoint lanes — no more.
+- **D2 — Distrust by default.** Re-derive untrusted values (rebuild a date from the engine clock), clamp to legal ranges (a score to 1–5), and gate every trust boundary with four-value tests — normal / mapped / None / tampered.
+- **D3 — Externalize decisions.** Each non-obvious decision gets an ID plus a reason/cost/escape-hatch comment at the decision site.
+- **D4 — Boundary first.** Declare what you will *not* touch before building — open scope by convergence, not divergence.
+- **D5 — Prefer reversibility.** Layer additively over rewriting; one decision per commit with its reason preserved.
+- **D6 — Broaden "done".** Done = behavior + tests + docs + verification, not just "it runs."
+
 ### Install
 
 Requires [Claude Code](https://docs.claude.com/en/docs/claude-code). In an interactive `claude` session, run:
@@ -84,7 +93,8 @@ memory/
 ├── handoff.md   # short map — always current, read first / written last
 ├── gates.md     # frozen acceptance gates
 ├── lanes.md     # lane specs with disjoint file sets
-└── lessons.md   # distilled one-line lessons (append-only, cross-session)
+├── lessons.md   # distilled one-line lessons (append-only, cross-session)
+└── decisions.md # externalized decision log (D3): IDs + reason/cost/escape-hatch
 ```
 
 These ship empty and are populated per run.
@@ -141,6 +151,15 @@ codex plugin marketplace remove rip-fable
 2. **fail → investigate → verify → distill 루프** — 실패가 구조적 수정을 유도하고, 해결된 내용은 한 줄로 정제해 재사용합니다.
 3. **검증 서브에이전트 게이팅** — 별도 에이전트가 실제 산출물을 동결된 gate에 대해 검증해, 신뢰할 수 없는 자기검증을 대체합니다.
 4. **짧은 지도(short-map) 외부 메모리** — 썩어가는 거대한 컨텍스트 로그 대신, 항상 최신인 작은 핸드오프 지도 + 링크된 상세 파일을 사용합니다.
+
+**v0.2 신규 — 운영 규율(D1–D6):** 네 가지 패턴 위에, ID가 붙어 외부화된 여섯 가지 규율을 추가합니다(`memory/decisions.md`에 기록):
+
+- **D1 — 스스로 goal 작성.** 아키텍트가 불충분한 goal을 직접 작성·정교화하고, 각 레인에 전용 `/goal`을 부여합니다. 겹치지 않는 레인 수만큼만 병렬 빌더를 spawn합니다(그 이상은 금지).
+- **D2 — 기본값은 불신(계약적 사고).** 신뢰할 수 없는 값은 재유도하고(모델이 준 날짜를 버리고 엔진 시계로 재조립), 합법 범위로 clamp하며(점수는 1–5), 모든 신뢰 경계를 4종 경계값 테스트(정상 / 매핑 / None / 변조)로 두릅니다.
+- **D3 — 결정의 외화.** 비자명한 결정마다 ID를 붙이고, 결정 지점 주석에 이유·비용·탈출구를 남깁니다.
+- **D4 — 경계 먼저 선언.** 풀기 전에 "건드리지 않을 것"을 적어 변경 반경을 좁힙니다 — 발산이 아니라 수렴으로 스코프를 엽니다.
+- **D5 — 가역성 선호.** 갈아엎지 않고 위에 얹으며, 결정 하나당 커밋 하나로 변경 이유를 보존합니다.
+- **D6 — 넓은 '완료' 정의.** 완료 = 동작 + 테스트 + 문서 현행화 + 검증이며, 단지 "코드가 도는 것"이 아닙니다.
 
 ### 설치
 
@@ -204,7 +223,8 @@ memory/
 ├── handoff.md   # 짧은 지도 — 항상 최신, 가장 먼저 읽고 가장 마지막에 씀
 ├── gates.md     # 동결된 합격 기준
 ├── lanes.md     # 겹치지 않는 파일셋을 가진 레인 명세
-└── lessons.md   # 한 줄로 정제된 교훈 (추가 전용, 세션 간 공유)
+├── lessons.md   # 한 줄로 정제된 교훈 (추가 전용, 세션 간 공유)
+└── decisions.md # 외화된 결정 로그 (D3): ID + 이유/비용/탈출구
 ```
 
 ### 요구 사항

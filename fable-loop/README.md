@@ -23,6 +23,27 @@ Four patterns, always applied together:
 4. **Short-map external memory** — a small always-current handoff map plus linked
    detail files, instead of a giant context log that rots.
 
+### New in v0.2 — operating disciplines (D1–D6)
+
+On top of the four patterns, v0.2 adds six disciplines, each an externalized,
+ID'd decision (see `memory/decisions.md`):
+
+- **D1 — Self-authored goals.** The architect can author/refine an underspecified
+  goal and give every lane its own dedicated `/goal`; spawn as many parallel
+  builders as there are disjoint lanes — no more.
+- **D2 — Distrust by default.** Re-derive untrusted values (e.g. rebuild a date
+  from the engine clock), clamp to legal ranges (a score to 1–5), and gate every
+  trust boundary with four-value tests — normal / mapped / None / tampered. See
+  [`references/contracts.md`](skills/fable-loop-orchestration/references/contracts.md).
+- **D3 — Externalize decisions.** Every non-obvious decision gets an ID plus a
+  reason/cost/escape-hatch comment at the decision site, logged in `memory/decisions.md`.
+- **D4 — Boundary first.** Declare what you will **not** touch before building, to
+  open scope by convergence rather than divergence.
+- **D5 — Prefer reversibility.** Layer additively over rewriting; keep one decision
+  per commit with its reason preserved.
+- **D6 — Broaden "done".** Done = behavior + tests + docs + verification, not just
+  "it runs."
+
 ## Components
 
 | Type   | Name                        | Purpose                                            |
@@ -40,7 +61,8 @@ memory/
 ├── handoff.md   # short map — always current, read first / written last
 ├── gates.md     # frozen acceptance gates
 ├── lanes.md     # lane specs with disjoint file sets
-└── lessons.md   # distilled one-line lessons (append-only, cross-session)
+├── lessons.md   # distilled one-line lessons (append-only, cross-session)
+└── decisions.md # externalized decision log (D3): IDs + reason/cost/escape-hatch
 ```
 
 ## Usage
