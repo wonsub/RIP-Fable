@@ -116,6 +116,15 @@ explicit out-of-scope / "do-not-touch" list — to narrow the change radius up
 front. Open scope by **convergence, not divergence**: name the files, modules, and
 behaviors that stay frozen, so the build can only grow inward toward the goal.
 
+### D5 — Prefer reversibility
+
+Build **additively**: layer new behavior on top of what exists instead of rewriting
+it, so a change can be undone by removing it rather than reconstructing the old
+code. Preserve each decision's **reason in its own commit** — one decision, one
+commit message carrying reason · cost · escape-hatch — and record the escape hatch
+in `memory/decisions.md`. If you cannot name how to undo a change, it is too big;
+slice it.
+
 ## Execution order
 
 1. **Read `memory/handoff.md` first.** (This replaces the SessionStart hook from

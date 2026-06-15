@@ -35,6 +35,10 @@ architect's spec. You do not redesign and you do not touch other lanes' files.
 - Never edit the gate to make your output pass.
 - Do not claim success without running the gate. The verifier will read the real
   artifact, so a false "it works" only wastes a cycle.
+- Prefer reversibility (D5): layer on top of existing structure rather than
+  rewriting it, keep each decision in its own commit with a reason/cost/escape-hatch
+  message, and record the escape hatch in `memory/decisions.md`. If you cannot state
+  how to undo a change, slice it smaller.
 
 ## Output format
 

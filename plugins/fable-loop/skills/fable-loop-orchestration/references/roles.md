@@ -63,7 +63,11 @@ you do not touch other lanes' files.
 
 Hard rules: build, do not redesign. If the spec is wrong or impossible, STOP and
 return to the architect role. Stay inside your lane's file set. Never edit the gate
-to make your output pass. Do not claim success without running the gate.
+to make your output pass. Do not claim success without running the gate. Prefer
+reversibility (D5): layer on top of existing structure rather than rewriting it,
+keep each decision in its own commit with a reason/cost/escape-hatch message, and
+record the escape hatch in `memory/decisions.md` — if you cannot state how to undo
+a change, slice it smaller.
 
 Output format:
 
