@@ -100,6 +100,33 @@ No environment variables, no external services. Drop it in and go.
 /plugin marketplace remove rip-fable
 ```
 
+### Codex CLI edition
+
+A Codex-native port lives in [`plugins/fable-loop/`](plugins/fable-loop/). It carries the same four patterns; because Codex has no session hooks and no spawnable sub-agents, the hook behavior and the architect/builder/verifier roles are folded into the skill protocol.
+
+**Install** — in a terminal, register this repo as a Codex marketplace (named `rip-fable`):
+
+```bash
+codex plugin marketplace add wonsub/RIP-Fable
+```
+
+`owner/repo`, an HTTPS/SSH Git URL, or a local clone path all work as the source.
+
+**Enable** — either turn it on in the Codex desktop app's plugin UI, or add this block to `~/.codex/config.toml`:
+
+```toml
+[plugins."fable-loop@rip-fable"]
+enabled = true
+```
+
+**Apply** — start a new Codex thread (so the skill loads), then trigger it the same way: "Run this as a fable loop". See [plugins/fable-loop/README.md](plugins/fable-loop/README.md) for details.
+
+**Uninstall** — remove the `[plugins."fable-loop@rip-fable"]` block from `~/.codex/config.toml`, then:
+
+```bash
+codex plugin marketplace remove rip-fable
+```
+
 ---
 
 ## 한국어
@@ -189,6 +216,33 @@ memory/
 ```
 /plugin uninstall fable-loop@rip-fable
 /plugin marketplace remove rip-fable
+```
+
+### Codex CLI 에디션
+
+Codex 전용 포트는 [`plugins/fable-loop/`](plugins/fable-loop/)에 있습니다. 네 가지 패턴은 동일하며, Codex에는 세션 훅·spawn 가능한 서브에이전트가 없어 훅 동작과 architect/builder/verifier 역할은 스킬 프로토콜에 흡수돼 있습니다.
+
+**설치** — 터미널에서 이 저장소를 Codex 마켓플레이스(`rip-fable`)로 등록합니다:
+
+```bash
+codex plugin marketplace add wonsub/RIP-Fable
+```
+
+소스로는 `owner/repo`, HTTPS/SSH Git URL, 로컬 클론 경로 모두 사용 가능합니다.
+
+**활성화** — Codex 데스크톱 앱의 플러그인 UI에서 켜거나, `~/.codex/config.toml`에 다음 블록을 추가합니다:
+
+```toml
+[plugins."fable-loop@rip-fable"]
+enabled = true
+```
+
+**적용** — 새 Codex 스레드를 시작하면(스킬 로드) 동일하게 자연어로 트리거하세요: "이걸 fable 루프로 진행해줘". 자세한 내용은 [plugins/fable-loop/README.md](plugins/fable-loop/README.md) 참고.
+
+**제거** — `~/.codex/config.toml`에서 `[plugins."fable-loop@rip-fable"]` 블록을 삭제한 뒤:
+
+```bash
+codex plugin marketplace remove rip-fable
 ```
 
 ---
