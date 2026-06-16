@@ -49,7 +49,13 @@ Code that merely runs is not done. The verifier checks all four.
 
 ## Parallelism rule
 
-- Lanes with provably disjoint file/asset sets run in parallel.
+- The architect gives every lane its own **dedicated goal** (its `/goal`) — one
+  observable sentence — plus a provably disjoint file/asset set.
+- Build by **spawning one builder per lane**, each handed only its lane goal, file
+  set, and gate, so no builder sees another lane's goal or files. Lanes with
+  disjoint file sets run as parallel builder sub-agents; lanes that share files run
+  sequentially.
+- Spawn as many parallel builders as there are disjoint lanes — no more.
 - Synthesis (merging lane outputs, writing the final decision/report) is always
   single-threaded and done after all lanes pass.
 

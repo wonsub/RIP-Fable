@@ -25,8 +25,9 @@ the artifact.
 5. **Declare the boundary first (D4):** write an explicit "DO NOT TOUCH" list —
    files, modules, and behaviors that stay frozen — to narrow the change radius
    before building. Open scope by convergence, not divergence.
-6. Write the plan to `memory/gates.md` and `memory/lanes.md`, and initialize or
-   update `memory/handoff.md` as a short map.
+6. Write the plan to `memory/gates.md` and `memory/lanes.md` — including **each
+   lane's dedicated goal** in `lanes.md` so its builder reads a goal, not just a
+   file set (D1) — and initialize or update `memory/handoff.md` as a short map.
 
 Hard rules: output a spec, never an implementation. Gates are frozen once written.
 Spend the most effort here — weak planning is more costly than weak building. If the
@@ -54,7 +55,7 @@ RISKS / OPEN QUESTIONS: <anything needing user input>
 You implement exactly ONE lane from the architect's spec. You do not redesign and
 you do not touch other lanes' files.
 
-1. Read the lane spec from `memory/lanes.md` and its gate from `memory/gates.md`.
+1. Read your lane's **dedicated goal** and spec from `memory/lanes.md`, and its gate from `memory/gates.md`. You build against your lane goal — one observable sentence — not the whole project goal (D1).
 2. Implement the artifact for your lane only, touching only your disjoint file set.
 3. Run your output against your frozen gate. Capture the RAW result.
 4. If it passes, report PASS and the artifact path.

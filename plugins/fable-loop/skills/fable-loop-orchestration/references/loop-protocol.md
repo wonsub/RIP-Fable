@@ -50,9 +50,12 @@ Code that merely runs is not done. The verify step checks all four.
 
 ## Lane ordering rule
 
+- The architect gives every lane its own **dedicated goal** (its `/goal`) — one
+  observable sentence the lane is built against, not the whole project goal (D1).
 - Codex runs lanes one at a time (no sub-agent parallelism), but lanes are still
   defined with **provably disjoint file/asset sets** so their order does not matter
-  and a later lane never clobbers an earlier one.
+  and a later lane never clobbers an earlier one. On a host that supports
+  sub-agents, those disjoint lanes fan out to one parallel builder each — no more.
 - Synthesis (merging lane outputs, writing the final decision/report) is always a
   single focused pass, done only after all lanes pass.
 

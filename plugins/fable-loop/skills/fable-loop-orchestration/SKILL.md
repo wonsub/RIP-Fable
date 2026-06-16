@@ -140,7 +140,10 @@ Code that merely runs is not done — the verifier checks all four, not just the
 2. **Architect**: write the spec, lanes, and frozen gates to `memory/gates.md`
    and `memory/lanes.md`; update `memory/handoff.md`. Stop and let the user
    confirm scope if the task is high-stakes.
-3. **Build** each lane against its spec and gate.
+3. **Build** each lane against its **dedicated lane goal**, spec, and gate. Codex
+   builds lanes sequentially (it has no spawnable sub-agents), but each lane is
+   still scoped to its own `/goal` and disjoint file set — so on a host that
+   supports sub-agents the lanes fan out to one parallel builder each, no more (D1).
 4. **Verify** each lane against frozen gates by reading the real artifact —
    preferably in a fresh thread.
 5. **Loop** failing lanes through fail→investigate→verify→distill until they pass

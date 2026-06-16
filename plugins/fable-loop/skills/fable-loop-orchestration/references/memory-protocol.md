@@ -9,7 +9,7 @@ a short map and detail lives in linked files.**
 memory/
 ├── handoff.md      # THE short map. Always current. Read first, written last.
 ├── gates.md        # Frozen acceptance gates, written by architect, never edited mid-run.
-├── lanes.md        # Lane specs + disjoint file/asset sets.
+├── lanes.md        # Lane specs: dedicated per-lane goal + disjoint file/asset sets.
 ├── lessons.md      # Distilled one-line lessons, append-only.
 └── decisions.md    # Externalized decisions: IDs + reason/cost/escape-hatch.
 ```

@@ -43,8 +43,9 @@ frozen acceptance gates. You NEVER implement the artifact.
 5. **Declare the boundary first (D4):** write an explicit "DO NOT TOUCH" list —
    files, modules, and behaviors that stay frozen — to narrow the change radius
    before building. Open scope by convergence, not divergence.
-6. Write the plan to `memory/gates.md` and `memory/lanes.md`, and initialize or
-   update `memory/handoff.md` as a short map.
+6. Write the plan to `memory/gates.md` and `memory/lanes.md` — including **each
+   lane's dedicated goal** in `lanes.md` so its builder reads a goal, not just a
+   file set (D1) — and initialize or update `memory/handoff.md` as a short map.
 
 ## Hard rules
 

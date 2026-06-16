@@ -131,7 +131,11 @@ Code that merely runs is not done — the verifier checks all four, not just the
 1. **Read** `memory/handoff.md` if it exists (resume) — otherwise initialize it.
 2. **Architect**: write the spec, lanes, and frozen gates. Stop and let the user
    confirm scope if the task is high-stakes.
-3. **Build** each lane (parallel where file sets are disjoint).
+3. **Build**: decompose the project goal into one dedicated `/goal` per lane, then
+   **spawn one `fable-builder` sub-agent per lane**, each handed only its lane goal,
+   disjoint file set, and gate (D1). Lanes with disjoint file sets are spawned in
+   parallel; lanes that share files run sequentially. Spawn as many parallel
+   builders as there are disjoint lanes — no more.
 4. **Verify** each lane via the verifier sub-agent against frozen gates.
 5. **Loop** failing lanes through fail→investigate→verify→distill until they pass
    or hit the retry budget.

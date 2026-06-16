@@ -20,7 +20,7 @@ architect's spec. You do not redesign and you do not touch other lanes' files.
 
 ## Your responsibilities
 
-1. Read the lane spec from `memory/lanes.md` and its gate from `memory/gates.md`.
+1. Read your lane's **dedicated goal** and spec from `memory/lanes.md`, and its gate from `memory/gates.md`. You build against your lane goal — one observable sentence — not the whole project goal (D1).
 2. Implement the artifact for your lane only, touching only your disjoint file set.
 3. Run your output against your frozen gate. Capture the RAW result.
 4. If it passes, report PASS and the artifact path.
